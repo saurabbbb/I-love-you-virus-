@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Me Virus</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .dialog {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      position: relative;
+      width: 300px;
+    }
+    .dialog h1 {
+      color: #e91e63;
+      margin-bottom: 1rem;
+    }
+    .btn {
+      padding: 0.5rem 1.2rem;
+      margin: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+    .cure {
+      background-color: #2196F3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dialog" id="dialogBox">
+    <h1>You have been infected with<br>"LOVE ME" Virus 💘</h1>
+    <p>Do you love me back?</p>
+    <button class="btn yes" onclick="alert('Aww 🥺 I knew it! Now we are both infected 😍')">YES</button>
+    <button class="btn no" id="noBtn">NO</button>
+    <br><br>
+    <button class="btn cure" onclick="cure()">Cure Me</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+
+    // Make the NO button move randomly
+    noBtn.addEventListener('mouseover', () => {
+      const i = Math.floor(Math.random() * (window.innerWidth - 100));
+      const j = Math.floor(Math.random() * (window.innerHeight - 50));
+      noBtn.style.left = i + 'px';
+      noBtn.style.top = j + 'px';
+    });
+
+    function cure() {
+      const box = document.getElementById('dialogBox');
+      box.innerHTML = "<h1>You Are Cured 💊</h1><p>But... was it really worth it? 😢</p>";
+    }
+  </script>
+
+</body>
+</html>
